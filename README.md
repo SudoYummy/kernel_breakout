@@ -34,7 +34,7 @@ cap_add:
 - SYS_MODULE
 ```
 #### Kubernetes
-Include the following in the pod specification:
+Include the following in the container specification:
 ```
 spec:
     containers:
