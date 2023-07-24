@@ -1,6 +1,5 @@
 # Container Breakout Using Kernel Modules
 
-# Summary
 Containers are extremely useful for rapidly deploying applications. Instead of running an entire operating system on the host (like a virtual machine), containers share the host resources. This makes escaping a container slightly easier than VM. Whether the managed platform is Docker or Kubernetes, this breakout will be effective. Part of the shared resources between container and the host OS, are the host's kernel modules. A privileged container can install, remove, and modify kernel modules on the host from within the container. This project exploits that capability to create a reverse from the local host to a remote server.
 
 ## Requirements
@@ -35,7 +34,7 @@ cap_add:
 - SYS_MODULE
 ```
 #### Kubernetes
-Include the foallowing in the config:
+Include the following in the pod specification:
 ```
 spec:
     containers:
