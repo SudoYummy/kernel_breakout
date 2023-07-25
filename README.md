@@ -1,18 +1,18 @@
 # Container Breakout Using Kernel Modules
 
-Containers are extremely useful for rapidly deploying applications. Instead of running an entire operating system on the host (like a virtual machine), containers share the host resources. This makes escaping a container slightly easier than VM. Whether the managed platform is Docker or Kubernetes, this breakout will be effective. Part of the shared resources between container and the host OS, are the host's kernel modules. A privileged container can install, remove, and modify kernel modules on the host from within the container. This project exploits that capability to create a reverse from the local host to a remote server.
+Containers are extremely useful for rapidly deploying applications. Instead of running an entire operating system on top of the host (like a virtual machine), containers share the host's resources. This makes escaping a container slightly easier than VM if it lacks proper security controls. If the managed platform is Docker or Kubernetes, this breakout will be effective. Part of the shared resources between container and the host OS, is the host's kernel modules. A privileged container can install, remove, and modify kernel modules on the host from within a container. This project exploits that capability to create a reverse from the local host to a remote server by installing a malicious kernel module.
 
 ![Diagram of the breakout](https://github.com/SudoYummy/kernel_breakout/blob/main/images/diagram.png)
 
 ## Requirements
 This breakout does not work in all use cases. **Two** things must be present for this exploit to function:
-* The host system must be Linux
+* The host system must be Linux.
 * The container must be started with **SYS_MODULE** capability enabled. The container can also be ran as "privileged".
 
 # Usage
 
 ## Building the Image
-By default, a simple build of the image will create a reverse shell on 127.0.0.1:4444. Be sure all piecies of the project are in the same directory of Dockerfile.
+The default build of the image will create a reverse shell on 127.0.0.1:4444. Be sure all piecies of the project are in the same directory as the Dockerfile.
 ```
 docker build -t imagename /path/to/Dockerfile
 ```
