@@ -2,6 +2,8 @@
 
 Containers are extremely useful for rapidly deploying applications. Instead of running an entire operating system on the host (like a virtual machine), containers share the host resources. This makes escaping a container slightly easier than VM. Whether the managed platform is Docker or Kubernetes, this breakout will be effective. Part of the shared resources between container and the host OS, are the host's kernel modules. A privileged container can install, remove, and modify kernel modules on the host from within the container. This project exploits that capability to create a reverse from the local host to a remote server.
 
+![Diagram of the breakout](/image/diagram.png)
+
 ## Requirements
 This breakout does not work in all use cases. **Two** things must be present for this exploit to function:
 * The host system must be Linux
@@ -44,3 +46,10 @@ spec:
                 add:
                 - SYS_MODULE
 ```
+
+# References
+For further reading and sources check the following pages:
+* [Docker Prvilege Escalation](https://book.hacktricks.xyz/linux-hardening/privilege-escalation/docker-security/docker-breakout-privilege-escalation#privileged)
+* [Linux Capabilities](https://book.hacktricks.xyz/linux-hardening/privilege-escalation/linux-capabilities)
+* [Technical write-up on how to escape an existing privileged container](https://www.cyberark.com/resources/threat-research-blog/how-i-hacked-play-with-docker-and-remotely-ran-code-on-the-host)
+* [3 Docker Breakout Techniques](https://www.cybereason.com/blog/container-escape-all-you-need-is-cap-capabilities)
