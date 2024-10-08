@@ -17,7 +17,7 @@ The default build of the image will create a reverse shell on 127.0.0.1:4444. Be
 docker build -t imagename /path/to/Dockerfile
 ```
 
-To specify an IP address and port insure that the image is built with the respective arguments.
+To specify an IP address and port ensure that the image is built with the respective arguments.
 ```
 docker build -t imagename --build-arg IP_ADDRESS=1.1.1.1 --build-arg PORT_NUMBER=23 /path/to/Dockerfile
 ```
